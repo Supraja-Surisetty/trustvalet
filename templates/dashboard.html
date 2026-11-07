@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+    <h2>Welcome to TrustValet Dashboard, {{ user }}</h2>
+    <a href="/logout">Logout</a> | <a href="/upload">Upload New Document</a>
+    
+    <h3>Secure Documents:</h3>
+    <ul>
+        {% for file in files %}
+            <li>
+                {{ file }} - <a href="/view/{{ file }}" target="_blank">View/Download Securely</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
